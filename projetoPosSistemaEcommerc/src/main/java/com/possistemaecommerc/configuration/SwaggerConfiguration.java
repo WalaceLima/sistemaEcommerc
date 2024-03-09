@@ -1,6 +1,7 @@
 package com.possistemaecommerc.configuration;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.servers.Server;
@@ -24,6 +25,6 @@ public class SwaggerConfiguration {
                     .title("Projeto PosTech Fiap Fase-5")
                     .version("1.0.0")
                     .description("Esta aplicação expõe os endpoints para gerenciamento da Api.");
-            return new OpenAPI().info(information).servers(List.of(server));
+            return new OpenAPI().components(new Components()).info(information).servers(List.of(server));
         }
 }
