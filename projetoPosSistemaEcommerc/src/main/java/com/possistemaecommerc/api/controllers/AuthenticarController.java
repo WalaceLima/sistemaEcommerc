@@ -1,12 +1,17 @@
 package com.possistemaecommerc.api.controllers;
 
+import com.possistemaecommerc.application.dtos.auth.AutenticarDTO;
+import com.possistemaecommerc.application.dtos.auth.AutenticarResponseDTO;
 import com.possistemaecommerc.application.dtos.auth.AuthenticarPostDTO;
 import com.possistemaecommerc.application.dtos.auth.AuthenticarGetDTO;
 import com.possistemaecommerc.application.dtos.clientes.ClienteGetDTO;
+import com.possistemaecommerc.application.interfaces.IUsuarioAppService;
 import com.possistemaecommerc.domain.Cliente;
 import com.possistemaecommerc.interfaces.IClienteRepository;
 import com.possistemaecommerc.infrastructure.security.Criptografia;
 import com.possistemaecommerc.infrastructure.security.TokenSecurity;
+import com.possistemaecommerc.interfaces.IUsuarioDomainService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -21,6 +26,10 @@ public class AuthenticarController {
     @Autowired
     private IClienteRepository clienteRepository;
     //private final IClienteRepository clienteRepository;
+
+    @Autowired
+    private IUsuarioAppService usuarioAppService;
+
 
     @PostMapping
     @ResponseBody
@@ -64,6 +73,12 @@ public class AuthenticarController {
             return ResponseEntity.status
                     (HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
+    }
+    @PostMapping("/api/usuarios/autenticar")
+    public ResponseEntity<AutenticarResponseDTO> post
+            (@Valid @RequestBody AutenticarDTO dto) {
+        AutenticarResponseDTO autenticarResponseDTO= usuarioAppService.autenticar(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(autenticarResponseDTO);
     }
 }
 

@@ -1,4 +1,4 @@
-package com.possistemaecommerc.configuration;
+package com.possistemaecommerc.api.controllers.configuration;
 
 import com.possistemaecommerc.filters.JWTAuthenticationFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -12,7 +12,7 @@ public class JWTConfiguration {
         FilterRegistrationBean<JWTAuthenticationFilter> filter=new FilterRegistrationBean<JWTAuthenticationFilter>();
         filter.setFilter(new JWTAuthenticationFilter());
         //maper os endpoints da Api que precisam de autenticação
-        filter.addUrlPatterns("/usuarios/atualizar-dados");
+        filter.addUrlPatterns("/api/usuarios/atualizar-dados");
         filter.addUrlPatterns(SWAGGER);
         return filter;
     }

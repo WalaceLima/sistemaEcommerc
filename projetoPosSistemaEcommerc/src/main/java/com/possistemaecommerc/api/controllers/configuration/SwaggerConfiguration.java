@@ -1,4 +1,4 @@
-package com.possistemaecommerc.configuration;
+package com.possistemaecommerc.api.controllers.configuration;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.models.Components;

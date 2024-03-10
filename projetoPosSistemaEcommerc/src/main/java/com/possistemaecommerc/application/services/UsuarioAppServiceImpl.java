@@ -37,7 +37,14 @@ public class UsuarioAppServiceImpl implements IUsuarioAppService {
 
     @Override
     public AutenticarResponseDTO autenticar(AutenticarDTO dto) {
-        return null;
+
+        ModelMapper modelMapper= new ModelMapper();
+        Usuario usuario= usuarioDomainService.autenticar(dto.getEmail(), dto.getSenha());
+
+        AutenticarResponseDTO autenticarResponseDTO=modelMapper.map(usuario,AutenticarResponseDTO.class);
+        autenticarResponseDTO.setMensagem("Usuario autenticado com sucesso!");
+
+        return autenticarResponseDTO;
     }
 
     @Override

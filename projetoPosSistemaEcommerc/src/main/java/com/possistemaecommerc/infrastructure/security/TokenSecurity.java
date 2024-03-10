@@ -23,7 +23,7 @@ public class TokenSecurity {
          String token = Jwts.builder()
                 .setSubject(email) //email do usuário
                 .setIssuedAt(new Date()) //data da geração
-                .signWith(SignatureAlgorithm.ES256,secretKey.getBytes()) //chave antifalsificação
+                .signWith(SignatureAlgorithm.HS256,secretKey.getBytes()) //chave antifalsificação
                 .compact();
         return token;
     }

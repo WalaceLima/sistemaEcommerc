@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class JWTAuthenticationFilter extends GenericFilterBean {
 
-    public static final String SECRET= "5eebb082-4046-4d7f-a638-3c16d9dec4f8";
+    public static final String SECRET= "minhachavesecretaparaautenticacaojwt";
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
