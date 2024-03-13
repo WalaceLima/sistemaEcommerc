@@ -22,6 +22,7 @@ public class JWTAuthenticationFilter extends GenericFilterBean {
         final HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         final HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
         final String authHeader = httpServletRequest.getHeader("authorization");
+
         if ("OPTIONS".equals(httpServletRequest.getMethod())){
             httpServletResponse.setStatus(HttpServletResponse.SC_OK);
             filterChain.doFilter(httpServletRequest,httpServletResponse);

@@ -10,28 +10,30 @@ import com.possistemaecommerc.domain.Cliente;
 import com.possistemaecommerc.interfaces.IClienteRepository;
 import com.possistemaecommerc.infrastructure.security.Criptografia;
 import com.possistemaecommerc.infrastructure.security.TokenSecurity;
-import com.possistemaecommerc.interfaces.IUsuarioDomainService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 //@RequiredArgsConstructor
 @RestController
-@RequestMapping(path = "/api/auth", produces = MediaType.APPLICATION_JSON_VALUE)
+//@RequestMapping(path = "/api/auth", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuthenticarController {
 
     @Autowired
     private IClienteRepository clienteRepository;
-    //private final IClienteRepository clienteRepository;
+//    private final IClienteRepository clienteRepository;
 
     @Autowired
+    @Qualifier("usuarioServiceImplTODO")
     private IUsuarioAppService usuarioAppService;
+  //  private final IUsuarioAppService usuarioAppService;
 
 
-    @PostMapping
+    @PostMapping("/api/clientes")
     @ResponseBody
     public ResponseEntity<AuthenticarGetDTO> post(@RequestBody AuthenticarPostDTO dto)
     {

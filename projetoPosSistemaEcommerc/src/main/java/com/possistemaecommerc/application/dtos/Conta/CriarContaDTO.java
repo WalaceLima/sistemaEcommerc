@@ -1,5 +1,7 @@
 package com.possistemaecommerc.application.dtos.Conta;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -10,7 +12,8 @@ import lombok.*;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@EqualsAndHashCode
+@ToString
 public class CriarContaDTO {
 
             @Size(min = 8, max = 150, message = "Nome do usuário deve ter de 8 a 150 caracteres.")

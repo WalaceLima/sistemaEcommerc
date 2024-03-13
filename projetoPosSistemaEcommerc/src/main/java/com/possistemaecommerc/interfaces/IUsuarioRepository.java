@@ -2,14 +2,15 @@ package com.possistemaecommerc.interfaces;
 
 import com.possistemaecommerc.domain.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.Optional;
 
 public interface IUsuarioRepository extends JpaRepository<Usuario,Integer> {
 
-    //@Query("{email : ?0}")
+    @Query("SELECT u FROM Usuario u WHERE u.email = ?1")
     Optional<Usuario> findByEmail(String email);
 
-   // @Query("{email: ?0,senha : ?1}")
+   @Query("SELECT u FROM Usuario u WHERE u.email = ?1 AND u.senha = ?2")
     Optional<Usuario> findByEmailAndSenha(String email,String senha);
 }

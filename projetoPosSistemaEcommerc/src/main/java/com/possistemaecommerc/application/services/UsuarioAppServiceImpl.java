@@ -1,6 +1,8 @@
 package com.possistemaecommerc.application.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.possistemaecommerc.application.dtos.AtualizarDadosResponseDTO;
+import com.possistemaecommerc.application.dtos.Conta.AtualizarDadosDTO;
 import com.possistemaecommerc.application.dtos.Conta.CriarContaDTO;
 import com.possistemaecommerc.application.dtos.Conta.CriarContaResponseDTO;
 import com.possistemaecommerc.application.dtos.Conta.RecuperarSenhaDTO;
@@ -10,9 +12,11 @@ import com.possistemaecommerc.application.dtos.auth.RecuperarSenhaResponseDTO;
 import com.possistemaecommerc.domain.Usuario;
 import com.possistemaecommerc.application.interfaces.IUsuarioAppService;
 import com.possistemaecommerc.interfaces.IUsuarioDomainService;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 @Service
 public class UsuarioAppServiceImpl implements IUsuarioAppService {
@@ -49,6 +53,11 @@ public class UsuarioAppServiceImpl implements IUsuarioAppService {
 
     @Override
     public RecuperarSenhaResponseDTO recuperarSenha(RecuperarSenhaDTO dto) {
+        return null;
+    }
+
+    @Override
+    public AtualizarDadosResponseDTO atualizarDados(AtualizarDadosDTO dto) {
         return null;
     }
 }
