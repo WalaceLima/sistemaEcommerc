@@ -24,4 +24,6 @@ public class Usuario {
     private Instant dataHoraUltimaAlteracao;
     @Transient
     private String accessToken;
+    @Transient
+    private String novaSenha;
 }

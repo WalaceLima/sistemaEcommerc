@@ -53,7 +53,13 @@ public class UsuarioAppServiceImpl implements IUsuarioAppService {
 
     @Override
     public RecuperarSenhaResponseDTO recuperarSenha(RecuperarSenhaDTO dto) {
-        return null;
+
+        ModelMapper modelMapper = new ModelMapper();
+        Usuario usuario = usuarioDomainService.recuperarSenha(dto.getEmail());
+        RecuperarSenhaResponseDTO recuperarSenhaResponseDTO = modelMapper.map(usuario, RecuperarSenhaResponseDTO.class);
+        recuperarSenhaResponseDTO.setMensagem("Recuperação de senha realizada com sucesso.");
+
+        return recuperarSenhaResponseDTO;
     }
 
     @Override

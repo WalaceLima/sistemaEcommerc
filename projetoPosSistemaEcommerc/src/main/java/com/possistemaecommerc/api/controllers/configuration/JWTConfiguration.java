@@ -12,8 +12,8 @@ public class JWTConfiguration {
         FilterRegistrationBean<JWTAuthenticationFilter> filter=new FilterRegistrationBean<JWTAuthenticationFilter>();
         filter.setFilter(new JWTAuthenticationFilter());
         //maper os endpoints da Api que precisam de autenticação
-        filter.addUrlPatterns("/api/usuarios/atualizar-dados");
-        filter.addUrlPatterns(SWAGGER);
+          filter.addUrlPatterns("/api/usuarios/atualizar-dados");
+          filter.addUrlPatterns(SWAGGER);
         return filter;
     }
     private static final String[] SWAGGER = {

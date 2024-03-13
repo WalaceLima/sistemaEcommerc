@@ -73,7 +73,14 @@ public class UsuarioServiceImplTODO implements IUsuarioAppService {
 
     @Override
     public AtualizarDadosResponseDTO atualizarDados(AtualizarDadosDTO dto) {
-        return null;
+        ModelMapper modelMapper = new ModelMapper();
+        Usuario usuario = modelMapper.map(dto, Usuario.class);
+        Usuario usuarioAtualizado = usuarioDomainService
+                .atualizarDados(usuario);
+        AtualizarDadosResponseDTO response = modelMapper.map
+                (usuarioAtualizado, AtualizarDadosResponseDTO.class);
+        response.setMensagem("Usuário atualizado com sucesso.");
+        return response;
     }
 
 
