@@ -1,4 +1,4 @@
-package com.possistemaecommerc.domain;
+package com.possistemaecommerc.api.controllers.configuration.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -35,7 +35,7 @@ public class Produto {
     @ManyToMany(mappedBy = "produtos")
     private List<Pedido> pedidos;
 
-/*    @ManyToOne
-    @JoinColumn(name = "idcategoria", nullable = false)
-    private Categoria categoria;*/
+    @ManyToOne
+    @JoinColumn(name = "idCategoria", nullable = false)
+    private Categoria categoria;
 }

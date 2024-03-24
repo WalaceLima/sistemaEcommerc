@@ -1,7 +1,7 @@
 package com.possistemaecommerc.api.controllers;
 
-import com.possistemaecommerc.domain.Endereco;
-import com.possistemaecommerc.interfaces.IEnderecoRepository;
+import com.possistemaecommerc.api.controllers.configuration.domain.Endereco;
+import com.possistemaecommerc.infrastructure.repositories.IEnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

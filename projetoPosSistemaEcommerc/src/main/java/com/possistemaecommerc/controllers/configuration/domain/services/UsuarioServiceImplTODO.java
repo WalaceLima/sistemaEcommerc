@@ -1,26 +1,24 @@
-package com.possistemaecommerc.domain.services;
+package com.possistemaecommerc.api.controllers.configuration.domain.services;
 
 import com.possistemaecommerc.application.dtos.AtualizarDadosResponseDTO;
-import com.possistemaecommerc.application.dtos.Conta.AtualizarDadosDTO;
-import com.possistemaecommerc.application.dtos.Conta.CriarContaDTO;
-import com.possistemaecommerc.application.dtos.Conta.CriarContaResponseDTO;
-import com.possistemaecommerc.application.dtos.Conta.RecuperarSenhaDTO;
+import com.possistemaecommerc.application.dtos.contas.AtualizarDadosDTO;
+import com.possistemaecommerc.application.dtos.contas.CriarContaDTO;
+import com.possistemaecommerc.application.dtos.contas.CriarContaResponseDTO;
+import com.possistemaecommerc.application.dtos.contas.RecuperarSenhaDTO;
 import com.possistemaecommerc.application.dtos.auth.AutenticarDTO;
 import com.possistemaecommerc.application.dtos.auth.AutenticarResponseDTO;
 import com.possistemaecommerc.application.dtos.auth.RecuperarSenhaResponseDTO;
 import com.possistemaecommerc.application.interfaces.IUsuarioAppService;
 import com.possistemaecommerc.infrastructure.MD5Component;
-import com.possistemaecommerc.domain.Usuario;
-import com.possistemaecommerc.interfaces.IUsuarioDomainService;
-import com.possistemaecommerc.interfaces.IUsuarioRepository;
-import com.possistemaecommerc.interfaces.IUsuarioService;
+import com.possistemaecommerc.api.controllers.configuration.domain.Usuario;
+import com.possistemaecommerc.infrastructure.repositories.IUsuarioDomainService;
+import com.possistemaecommerc.infrastructure.repositories.IUsuarioRepository;
 import com.possistemaecommerc.infrastructure.security.TokenSecurity;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
-import java.util.Optional;
 
 @Service
 public class UsuarioServiceImplTODO implements IUsuarioAppService {

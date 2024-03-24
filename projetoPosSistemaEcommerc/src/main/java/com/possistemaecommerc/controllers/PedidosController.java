@@ -2,11 +2,11 @@ package com.possistemaecommerc.api.controllers;
 
 import com.possistemaecommerc.application.dtos.pedidos.PedidoGetDTO;
 import com.possistemaecommerc.application.dtos.pedidos.PedidoPostDTO;
-import com.possistemaecommerc.domain.Pedido;
-import com.possistemaecommerc.domain.Produto;
-import com.possistemaecommerc.interfaces.IClienteRepository;
-import com.possistemaecommerc.interfaces.IPedidoRepository;
-import com.possistemaecommerc.interfaces.IProdutoRepository;
+import com.possistemaecommerc.api.controllers.configuration.domain.Pedido;
+import com.possistemaecommerc.api.controllers.configuration.domain.Produto;
+import com.possistemaecommerc.infrastructure.repositories.IClienteRepository;
+import com.possistemaecommerc.infrastructure.repositories.IPedidoRepository;
+import com.possistemaecommerc.infrastructure.repositories.IProdutoRepository;
 import com.possistemaecommerc.helpers.DateHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,7 +1,7 @@
 package com.possistemaecommerc.api.controllers;
 
 import com.possistemaecommerc.application.dtos.AtualizarDadosResponseDTO;
-import com.possistemaecommerc.application.dtos.Conta.AtualizarDadosDTO;
+import com.possistemaecommerc.application.dtos.contas.AtualizarDadosDTO;
 import com.possistemaecommerc.application.interfaces.IUsuarioAppService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.possistemaecommerc.api.controllers;
 
-import com.possistemaecommerc.application.dtos.Conta.CriarContaDTO;
-import com.possistemaecommerc.application.dtos.Conta.CriarContaResponseDTO;
+import com.possistemaecommerc.application.dtos.contas.CriarContaDTO;
+import com.possistemaecommerc.application.dtos.contas.CriarContaResponseDTO;
 import com.possistemaecommerc.application.services.UsuarioAppServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

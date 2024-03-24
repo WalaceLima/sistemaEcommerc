@@ -1,8 +1,8 @@
 package com.possistemaecommerc.api.controllers;
 
 import com.possistemaecommerc.application.dtos.produtos.ProdutoGetDTO;
-import com.possistemaecommerc.domain.Produto;
-import com.possistemaecommerc.interfaces.IProdutoRepository;
+import com.possistemaecommerc.api.controllers.configuration.domain.Produto;
+import com.possistemaecommerc.infrastructure.repositories.IProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

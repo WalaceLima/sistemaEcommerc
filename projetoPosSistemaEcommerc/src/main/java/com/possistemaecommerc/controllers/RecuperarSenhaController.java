@@ -1,6 +1,6 @@
 package com.possistemaecommerc.api.controllers;
 
-import com.possistemaecommerc.application.dtos.Conta.RecuperarSenhaDTO;
+import com.possistemaecommerc.application.dtos.contas.RecuperarSenhaDTO;
 import com.possistemaecommerc.application.dtos.auth.RecuperarSenhaResponseDTO;
 import com.possistemaecommerc.application.interfaces.IUsuarioAppService;
 import jakarta.validation.Valid;

@@ -1,11 +1,11 @@
-package com.possistemaecommerc.domain.services;
+package com.possistemaecommerc.api.controllers.configuration.domain.services;
 
 import com.github.javafaker.Faker;
 import com.possistemaecommerc.infrastructure.MD5Component;
-import com.possistemaecommerc.domain.Usuario;
+import com.possistemaecommerc.api.controllers.configuration.domain.Usuario;
 import com.possistemaecommerc.infrastructure.security.TokenSecurity;
-import com.possistemaecommerc.interfaces.IUsuarioDomainService;
-import com.possistemaecommerc.interfaces.IUsuarioRepository;
+import com.possistemaecommerc.infrastructure.repositories.IUsuarioDomainService;
+import com.possistemaecommerc.infrastructure.repositories.IUsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

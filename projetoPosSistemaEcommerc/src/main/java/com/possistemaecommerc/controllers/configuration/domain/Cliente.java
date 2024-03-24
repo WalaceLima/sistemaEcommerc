@@ -1,4 +1,4 @@
-package com.possistemaecommerc.domain;
+package com.possistemaecommerc.api.controllers.configuration.domain;
 
 
 import jakarta.persistence.*;

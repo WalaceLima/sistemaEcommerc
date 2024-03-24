@@ -1,6 +1,7 @@
 package com.possistemaecommerc.application.dtos.produtos;
 
 
+import com.possistemaecommerc.application.dtos.categorias.CategoriasDTO;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,5 +13,5 @@ public class ProdutoGetDTO {
     private Double preco;
     private String descricao;
     private String foto;
- //   private Categoria categoria;
+    private CategoriasDTO categoria;
 }
