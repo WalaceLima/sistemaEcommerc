@@ -1,11 +1,11 @@
-package com.possistemaecommerc.api.controllers.configuration.domain.services;
+package com.possistemaecommerc.controllers.configuration.domain.services;
 
 import com.github.javafaker.Faker;
+import com.possistemaecommerc.controllers.configuration.domain.Usuario;
 import com.possistemaecommerc.infrastructure.MD5Component;
-import com.possistemaecommerc.api.controllers.configuration.domain.Usuario;
-import com.possistemaecommerc.infrastructure.security.TokenSecurity;
 import com.possistemaecommerc.infrastructure.repositories.IUsuarioDomainService;
 import com.possistemaecommerc.infrastructure.repositories.IUsuarioRepository;
+import com.possistemaecommerc.infrastructure.security.TokenSecurity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,7 +46,7 @@ public class UsuarioDomainServiceImpl implements IUsuarioDomainService {
         Optional<Usuario> optional = usuarioRepository
                 .findByEmailAndSenha
                         (email, md5Component.encrypt(senha));
-        if(optional.isEmpty()) {
+        if (optional.isEmpty()) {
             throw new IllegalArgumentException
                     ("Acesso negado. Usuário não encontrado.");
 
@@ -62,7 +62,7 @@ public class UsuarioDomainServiceImpl implements IUsuarioDomainService {
     public Usuario recuperarSenha(String email) {
 
         Optional<Usuario> optional = usuarioRepository.findByEmail(email);
-        if(optional.isEmpty())
+        if (optional.isEmpty())
             throw new IllegalArgumentException
                     ("Usuário inválido. Verifique o email informado.");
 
@@ -83,14 +83,14 @@ public class UsuarioDomainServiceImpl implements IUsuarioDomainService {
         Optional<Usuario> optional = usuarioRepository.findById
                 (usuario.getId());
 
-        if(optional.isEmpty())
+        if (optional.isEmpty())
             throw new IllegalArgumentException
                     ("Usuário inválido. Verifique o id informado.");
 
         Usuario usuarioAtualizado = optional.get();
-        if(usuario.getNome() != null)
+        if (usuario.getNome() != null)
             usuarioAtualizado.setNome(usuario.getNome());
-        if(usuario.getSenha() != null)
+        if (usuario.getSenha() != null)
             usuarioAtualizado.setSenha
                     (md5Component.encrypt(usuario.getSenha()));
         usuarioAtualizado.setDataHoraUltimaAlteracao(Instant.now());
