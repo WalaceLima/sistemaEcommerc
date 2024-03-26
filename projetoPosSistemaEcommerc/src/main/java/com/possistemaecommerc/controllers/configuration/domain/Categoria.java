@@ -1,4 +1,4 @@
-package com.possistemaecommerc.api.controllers.configuration.domain;
+package com.possistemaecommerc.controllers.configuration.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,6 @@ import java.util.List;
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private Integer idCategoria;
 
     @Column(length = 50, nullable = false)

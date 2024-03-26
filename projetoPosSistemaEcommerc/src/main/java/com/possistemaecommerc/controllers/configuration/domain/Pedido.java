@@ -1,4 +1,4 @@
-package com.possistemaecommerc.api.controllers.configuration.domain;
+package com.possistemaecommerc.controllers.configuration.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,7 +18,7 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idPedido;
 
-    @Column(nullable = false,unique = true)
+    @Column(nullable = false, unique = true)
     private String codigoPedido;
 
     @Temporal(TemporalType.TIMESTAMP)

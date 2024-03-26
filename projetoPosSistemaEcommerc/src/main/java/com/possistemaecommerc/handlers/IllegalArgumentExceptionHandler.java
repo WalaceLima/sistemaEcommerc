@@ -1,6 +1,6 @@
 package com.possistemaecommerc.handlers;
 
-import com.possistemaecommerc.application.dtos.Exception.ExceptionHandlerDTO;
+import com.possistemaecommerc.application.dtos.exceptions.ExceptionHandlerDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -14,15 +14,15 @@ import java.util.List;
 public class IllegalArgumentExceptionHandler {
 
 
-        @ExceptionHandler(IllegalArgumentException.class)
-        @ResponseStatus(HttpStatus.BAD_REQUEST)
-        @ResponseBody
-        public ExceptionHandlerDTO handleIllegalArgumentException
-                (IllegalArgumentException ex) {
-            List<String> errors = new ArrayList<String>();
-            errors.add(ex.getMessage());
-            return new ExceptionHandlerDTO
-                    (HttpStatus.BAD_REQUEST, errors);
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    public ExceptionHandlerDTO handleIllegalArgumentException
+            (IllegalArgumentException ex) {
+        List<String> errors = new ArrayList<String>();
+        errors.add(ex.getMessage());
+        return new ExceptionHandlerDTO
+                (HttpStatus.BAD_REQUEST, errors);
 
-        }
+    }
 }

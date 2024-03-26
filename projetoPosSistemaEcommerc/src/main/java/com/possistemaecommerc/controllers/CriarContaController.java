@@ -1,4 +1,4 @@
-package com.possistemaecommerc.api.controllers;
+package com.possistemaecommerc.controllers;
 
 import com.possistemaecommerc.application.dtos.contas.CriarContaDTO;
 import com.possistemaecommerc.application.dtos.contas.CriarContaResponseDTO;
@@ -18,9 +18,9 @@ public class CriarContaController {
     private UsuarioAppServiceImpl usuarioAppService;
 
     @PostMapping("/api/usuarios/criar-conta")
-    public ResponseEntity<CriarContaResponseDTO> post(@Valid @RequestBody CriarContaDTO dto){
+    public ResponseEntity<CriarContaResponseDTO> post(@Valid @RequestBody CriarContaDTO dto) {
 
-        CriarContaResponseDTO responseDTO= usuarioAppService.criarConta(dto);
+        CriarContaResponseDTO responseDTO = usuarioAppService.criarConta(dto);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(responseDTO);
     }

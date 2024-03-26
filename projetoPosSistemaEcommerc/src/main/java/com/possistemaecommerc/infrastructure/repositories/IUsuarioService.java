@@ -1,6 +1,6 @@
-package com.possistemaecommerc.interfaces;
+package com.possistemaecommerc.infrastructure.repositories;
 
-import com.possistemaecommerc.domain.Usuario;
+import com.possistemaecommerc.controllers.configuration.domain.Usuario;
 
 public interface IUsuarioService {
     void criarConta(Usuario usuario);

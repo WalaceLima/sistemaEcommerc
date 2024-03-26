@@ -1,6 +1,6 @@
-package com.possistemaecommerc.interfaces;
+package com.possistemaecommerc.infrastructure.repositories;
 
-import com.possistemaecommerc.domain.Cliente;
+import com.possistemaecommerc.controllers.configuration.domain.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

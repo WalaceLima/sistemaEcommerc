@@ -1,4 +1,4 @@
-package com.possistemaecommerc.application.dtos.Conta;
+package com.possistemaecommerc.application.dtos.contas;
 
 import lombok.*;
 

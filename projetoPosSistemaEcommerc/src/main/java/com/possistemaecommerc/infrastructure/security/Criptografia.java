@@ -6,6 +6,7 @@ public class Criptografia {
 
     // atributo para gerar a criptografia em MD5..
     private static MessageDigest messageDigest = null;
+
     // método estático anônimo para inicializar
 //o atributo MessageDigest
     static {
@@ -15,6 +16,7 @@ public class Criptografia {
             e.printStackTrace();
         }
     }
+
     // método para converter um valor criptografado
 // de byte[] para string hexadecimal..
     private static char[] hexCodes(byte[] text) {
@@ -28,6 +30,7 @@ public class Criptografia {
         }
         return hexOutput;
     }
+
     // método para realizar a criptografia..
     public static String criptografar(String value) {
         if (value != null) {

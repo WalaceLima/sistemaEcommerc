@@ -1,12 +1,12 @@
-package com.possistemaecommerc.application.dtos.Categorias;
+package com.possistemaecommerc.application.dtos.categorias;
 
-import jakarta.persistence.Id;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-public class CategoriasDto {
-    @Id
-    private Integer id;
+@Getter
+@Setter
+public class CategoriasDTO {
+    private Integer idCategoria;
     private String nome;
     private String descricao;
 }

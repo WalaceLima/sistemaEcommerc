@@ -8,14 +8,16 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 @SpringBootApplication(scanBasePackages = "com.possistemaecommerc")
 public class ProjetoPosSistemaEcommercApplication extends SpringBootServletInitializer {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ProjetoPosSistemaEcommercApplication.class, args);
-	}
-	private static Class<ProjetoPosSistemaEcommercApplication>
-			applicationClass = ProjetoPosSistemaEcommercApplication.class;
-	@Override
-	protected SpringApplicationBuilder configure
-			(SpringApplicationBuilder builder) {
-		return builder.sources(applicationClass);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ProjetoPosSistemaEcommercApplication.class, args);
+    }
+
+    private static Class<ProjetoPosSistemaEcommercApplication>
+            applicationClass = ProjetoPosSistemaEcommercApplication.class;
+
+    @Override
+    protected SpringApplicationBuilder configure
+            (SpringApplicationBuilder builder) {
+        return builder.sources(applicationClass);
+    }
 }

@@ -1,4 +1,4 @@
-package com.possistemaecommerc.application.dtos.Conta;
+package com.possistemaecommerc.application.dtos.contas;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Pattern;
@@ -21,6 +21,6 @@ public class AtualizarDadosDTO {
     private String nome;
 
     @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$",
-    message = "A senha deve ter pelo menos 8 caracteres,uma letra maiúscula, uma letra minúscula, um número e um caractere especial")
+            message = "A senha deve ter pelo menos 8 caracteres,uma letra maiúscula, uma letra minúscula, um número e um caractere especial")
     private String senha;
 }

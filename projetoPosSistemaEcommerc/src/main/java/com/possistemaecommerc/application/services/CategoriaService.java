@@ -1,5 +1,4 @@
-/*
-package com.possistemaecommerc.controllers.configuration.domain.services;
+package com.possistemaecommerc.application.services;
 
 import com.possistemaecommerc.controllers.configuration.domain.Categoria;
 import com.possistemaecommerc.infrastructure.repositories.ICategoriasCache;
@@ -10,7 +9,6 @@ import java.util.List;
 
 @Service
 public class CategoriaService {
-
     @Autowired
     private ICategoriasCache categoriasCache;
 
@@ -18,4 +16,3 @@ public class CategoriaService {
         return categoriasCache.findAll();
     }
 }
-*/

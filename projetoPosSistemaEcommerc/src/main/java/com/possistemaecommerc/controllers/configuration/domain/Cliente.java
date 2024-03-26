@@ -1,4 +1,4 @@
-package com.possistemaecommerc.api.controllers.configuration.domain;
+package com.possistemaecommerc.controllers.configuration.domain;
 
 
 import jakarta.persistence.*;
@@ -40,7 +40,7 @@ na classe Endereco este atributo é:
 deste atributo
 */
 
-//mapeaando a chave estrangeira, unique=true (um para um)
+    //mapeaando a chave estrangeira, unique=true (um para um)
     @OneToOne(mappedBy = "cliente", cascade = CascadeType.ALL)
     private Endereco endereco;
 }

@@ -1,4 +1,4 @@
-package com.possistemaecommerc.api.controllers.configuration.domain;
+package com.possistemaecommerc.controllers.configuration.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

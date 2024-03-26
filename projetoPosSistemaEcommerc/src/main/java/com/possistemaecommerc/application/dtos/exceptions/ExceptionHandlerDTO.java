@@ -1,4 +1,4 @@
-package com.possistemaecommerc.application.dtos.Exception;
+package com.possistemaecommerc.application.dtos.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -13,14 +13,17 @@ public class DateHelper {
         Calendar cal = new GregorianCalendar(ano, mes - 1, dia);
         return cal.getTime();
     }
+
     public static String toString(Date data) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(data);
     }
+
     public static String toStringPtBR(Date data) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         return sdf.format(data);
     }
+
     public static String toStringLine(Date data) {
         SimpleDateFormat sdf = new SimpleDateFormat
                 ("yyyyMMddhhmmss");

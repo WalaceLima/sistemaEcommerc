@@ -1,4 +1,4 @@
-package com.possistemaecommerc.api.controllers;
+package com.possistemaecommerc.controllers;
 
 import com.possistemaecommerc.application.dtos.AtualizarDadosResponseDTO;
 import com.possistemaecommerc.application.dtos.contas.AtualizarDadosDTO;
@@ -21,7 +21,7 @@ public class AtualizarDadosController {
 
     @PutMapping("/api/usuarios/atualizar-dados")
     public ResponseEntity<AtualizarDadosResponseDTO> put(@Valid @RequestBody AtualizarDadosDTO dto) {
-        AtualizarDadosResponseDTO atualizarDadosResponseDTO= usuarioAppService.atualizarDados(dto);
+        AtualizarDadosResponseDTO atualizarDadosResponseDTO = usuarioAppService.atualizarDados(dto);
         return ResponseEntity.status(HttpStatus.OK).body(atualizarDadosResponseDTO);
     }
 }

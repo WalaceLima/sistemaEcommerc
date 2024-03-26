@@ -1,7 +1,7 @@
 package com.possistemaecommerc.application.dtos.pedidos;
 
 import com.possistemaecommerc.application.dtos.clientes.ClienteGetDTO;
-import com.possistemaecommerc.application.dtos.produtos.ProdutoGetDTO;
+import com.possistemaecommerc.application.dtos.produtos.ProdutosDTO;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,6 +15,6 @@ public class PedidoGetDTO {
     private String dataPedido;
     private Double valor;
     private ClienteGetDTO cliente;
-    private List<ProdutoGetDTO> produtos;
+    private List<ProdutosDTO> produtos;
 
 }

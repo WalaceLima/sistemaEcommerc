@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class JWTAuthenticationFilter extends GenericFilterBean {
 
-    public static final String SECRET= "minhachavesecretaparaautenticacaojwt";
+    public static final String SECRET = "minhachavesecretaparaautenticacaojwt";
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
@@ -23,18 +23,18 @@ public class JWTAuthenticationFilter extends GenericFilterBean {
         final HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
         final String authHeader = httpServletRequest.getHeader("authorization");
 
-        if ("OPTIONS".equals(httpServletRequest.getMethod())){
+        if ("OPTIONS".equals(httpServletRequest.getMethod())) {
             httpServletResponse.setStatus(HttpServletResponse.SC_OK);
-            filterChain.doFilter(httpServletRequest,httpServletResponse);
-        }else {
-            if(authHeader==null || !authHeader.startsWith("Bearer")){
-                throw  new ServletException("An exception occured");
+            filterChain.doFilter(httpServletRequest, httpServletResponse);
+        } else {
+            if (authHeader == null || !authHeader.startsWith("Bearer")) {
+                throw new ServletException("An exception occured");
             }
         }
-        final String jwtToken=authHeader.substring(7);
-        Claims claims= Jwts.parser().setSigningKey(SECRET.getBytes()).parseClaimsJws(jwtToken).getBody();
-        httpServletRequest.setAttribute("claims",claims);
+        final String jwtToken = authHeader.substring(7);
+        Claims claims = Jwts.parser().setSigningKey(SECRET.getBytes()).parseClaimsJws(jwtToken).getBody();
+        httpServletRequest.setAttribute("claims", claims);
         httpServletRequest.setAttribute("blog", servletRequest.getParameter("id"));
-        filterChain.doFilter(httpServletRequest,httpServletResponse);
+        filterChain.doFilter(httpServletRequest, httpServletResponse);
     }
 }

@@ -3,9 +3,9 @@ package com.possistemaecommerc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
-import com.possistemaecommerc.application.dtos.Conta.AtualizarDadosDTO;
-import com.possistemaecommerc.application.dtos.Conta.CriarContaDTO;
-import com.possistemaecommerc.application.dtos.Conta.RecuperarSenhaDTO;
+import com.possistemaecommerc.application.dtos.contas.AtualizarDadosDTO;
+import com.possistemaecommerc.application.dtos.contas.CriarContaDTO;
+import com.possistemaecommerc.application.dtos.contas.RecuperarSenhaDTO;
 import com.possistemaecommerc.application.dtos.auth.AutenticarDTO;
 import com.possistemaecommerc.application.dtos.auth.AutenticarResponseDTO;
 import org.junit.jupiter.api.MethodOrderer;

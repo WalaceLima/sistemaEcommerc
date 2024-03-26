@@ -1,12 +1,12 @@
-package com.possistemaecommerc.api.controllers;
+package com.possistemaecommerc.controllers;
 
 import com.possistemaecommerc.application.dtos.auth.AutenticarDTO;
 import com.possistemaecommerc.application.dtos.auth.AutenticarResponseDTO;
-import com.possistemaecommerc.application.dtos.auth.AuthenticarPostDTO;
 import com.possistemaecommerc.application.dtos.auth.AuthenticarGetDTO;
+import com.possistemaecommerc.application.dtos.auth.AuthenticarPostDTO;
 import com.possistemaecommerc.application.dtos.clientes.ClienteGetDTO;
 import com.possistemaecommerc.application.interfaces.IUsuarioAppService;
-import com.possistemaecommerc.api.controllers.configuration.domain.Cliente;
+import com.possistemaecommerc.controllers.configuration.domain.Cliente;
 import com.possistemaecommerc.infrastructure.repositories.IClienteRepository;
 import com.possistemaecommerc.infrastructure.security.Criptografia;
 import com.possistemaecommerc.infrastructure.security.TokenSecurity;
@@ -15,32 +15,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-//@RequiredArgsConstructor
 @RestController
 //@RequestMapping(path = "/api/auth", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuthenticarController {
 
     @Autowired
     private IClienteRepository clienteRepository;
-//    private final IClienteRepository clienteRepository;
 
     @Autowired
     @Qualifier("usuarioServiceImplTODO")
     private IUsuarioAppService usuarioAppService;
-  //  private final IUsuarioAppService usuarioAppService;
 
 
     @PostMapping("/api/clientes")
     @ResponseBody
-    public ResponseEntity<AuthenticarGetDTO> post(@RequestBody AuthenticarPostDTO dto)
-    {
+    public ResponseEntity<AuthenticarGetDTO> post(@RequestBody AuthenticarPostDTO dto) {
         try {
 
-    Cliente cliente = clienteRepository.findByEmailAndSenha(dto.getEmail(), Criptografia.criptografar(dto.getSenha()));
+            Cliente cliente = clienteRepository.findByEmailAndSenha(dto.getEmail(), Criptografia.criptografar(dto.getSenha()));
 
-            if(cliente == null) { //não foi encontrado..
+            if (cliente == null) { //não foi encontrado..
                 return ResponseEntity.status
                         (HttpStatus.UNAUTHORIZED).body(null);
             }
@@ -75,10 +74,11 @@ public class AuthenticarController {
                     (HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
+
     @PostMapping("/api/usuarios/autenticar")
     public ResponseEntity<AutenticarResponseDTO> post
             (@Valid @RequestBody AutenticarDTO dto) {
-        AutenticarResponseDTO autenticarResponseDTO= usuarioAppService.autenticar(dto);
+        AutenticarResponseDTO autenticarResponseDTO = usuarioAppService.autenticar(dto);
         return ResponseEntity.status(HttpStatus.OK).body(autenticarResponseDTO);
     }
 }

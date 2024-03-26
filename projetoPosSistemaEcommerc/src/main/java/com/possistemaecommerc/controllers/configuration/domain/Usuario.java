@@ -1,9 +1,10 @@
-package com.possistemaecommerc.api.controllers.configuration.domain;
+package com.possistemaecommerc.controllers.configuration.domain;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Transient;
-
 
 import java.time.Instant;
 

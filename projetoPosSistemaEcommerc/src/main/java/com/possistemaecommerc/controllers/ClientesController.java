@@ -1,10 +1,11 @@
-package com.possistemaecommerc.api.controllers;
+/*
+package com.possistemaecommerc.controllers;
 
 import com.possistemaecommerc.application.dtos.clientes.ClienteGetDTO;
 import com.possistemaecommerc.application.dtos.clientes.ClientePostDTO;
 import com.possistemaecommerc.application.dtos.clientes.ClientePutDTO;
-import com.possistemaecommerc.api.controllers.configuration.domain.Cliente;
-import com.possistemaecommerc.api.controllers.configuration.domain.Endereco;
+import com.possistemaecommerc.controllers.configuration.domain.Cliente;
+import com.possistemaecommerc.controllers.configuration.domain.Endereco;
 import com.possistemaecommerc.infrastructure.repositories.IClienteRepository;
 import com.possistemaecommerc.infrastructure.repositories.IEnderecoRepository;
 import com.possistemaecommerc.infrastructure.security.Criptografia;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-//@RequiredArgsConstructor
 @RestController
 @RequestMapping(path = "/api/clientes", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ClientesController {
@@ -26,8 +26,6 @@ public class ClientesController {
     @Autowired
     private IEnderecoRepository enderecoRepository;
 
-//    private final IClienteRepository clienteRepository;
-//    private final IEnderecoRepository enderecoRepository;
 
     @PostMapping
     @ResponseBody
@@ -68,6 +66,7 @@ public class ClientesController {
                     .body("Erro: " + e.getMessage());
         }
     }
+
     @PutMapping
     @ResponseBody
     public ResponseEntity<String> put(@RequestBody ClientePutDTO dto) {
@@ -103,6 +102,7 @@ public class ClientesController {
                     .body("Erro: " + e.getMessage());
         }
     }
+
     @DeleteMapping("/{id}")
     @ResponseBody
     public ResponseEntity<String> delete(@PathVariable("id") Integer id) {
@@ -125,6 +125,7 @@ public class ClientesController {
         }
 
     }
+
     @GetMapping("/{id}")
     @ResponseBody
     public ResponseEntity<ClienteGetDTO> getById(@PathVariable("id") Integer id) {
@@ -161,3 +162,4 @@ public class ClientesController {
     }
 
 }
+*/

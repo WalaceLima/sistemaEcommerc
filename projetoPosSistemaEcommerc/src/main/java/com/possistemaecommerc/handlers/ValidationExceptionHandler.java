@@ -1,6 +1,6 @@
 package com.possistemaecommerc.handlers;
 
-import com.possistemaecommerc.application.dtos.Exception.ExceptionHandlerDTO;
+import com.possistemaecommerc.application.dtos.exceptions.ExceptionHandlerDTO;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -18,26 +18,26 @@ import java.util.List;
 @ControllerAdvice
 public class ValidationExceptionHandler extends ResponseEntityExceptionHandler {
 
-        @Override
-        protected ResponseEntity<Object> handleMethodArgumentNotValid(
-                 MethodArgumentNotValidException ex,
-                 HttpHeaders headers, HttpStatusCode status,
-                 WebRequest request) {
-            List<String> errors = new ArrayList<String>();
-            for (FieldError error : ex.getBindingResult()
-                    .getFieldErrors()) {
-                errors.add(error.getField()
-                        + ": " + error.getDefaultMessage());
-            }
-            for (ObjectError error : ex.getBindingResult()
-                    .getGlobalErrors()) {
-                errors.add(error.getObjectName()
-                        + ": " + error.getDefaultMessage());
-            }
-            ExceptionHandlerDTO apiError = new ExceptionHandlerDTO
-                    (HttpStatus.BAD_REQUEST, errors);
-            return handleExceptionInternal(ex, apiError, headers,
-                    apiError.getStatus(), request);
-
+    @Override
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(
+            MethodArgumentNotValidException ex,
+            HttpHeaders headers, HttpStatusCode status,
+            WebRequest request) {
+        List<String> errors = new ArrayList<String>();
+        for (FieldError error : ex.getBindingResult()
+                .getFieldErrors()) {
+            errors.add(error.getField()
+                    + ": " + error.getDefaultMessage());
         }
+        for (ObjectError error : ex.getBindingResult()
+                .getGlobalErrors()) {
+            errors.add(error.getObjectName()
+                    + ": " + error.getDefaultMessage());
+        }
+        ExceptionHandlerDTO apiError = new ExceptionHandlerDTO
+                (HttpStatus.BAD_REQUEST, errors);
+        return handleExceptionInternal(ex, apiError, headers,
+                apiError.getStatus(), request);
+
+    }
 }

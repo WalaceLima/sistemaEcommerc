@@ -1,6 +1,6 @@
-package com.possistemaecommerc.interfaces;
+package com.possistemaecommerc.infrastructure.repositories;
 
-import com.possistemaecommerc.domain.Endereco;
+import com.possistemaecommerc.controllers.configuration.domain.Endereco;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
